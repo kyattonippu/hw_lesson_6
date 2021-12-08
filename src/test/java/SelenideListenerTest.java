@@ -22,12 +22,11 @@ public class SelenideListenerTest {
     @Link(name = "GitHub", url = "https://github.com")
     @Test
 
-    public void checkIssueSelenideListener () {
+    public void checkIssuesSelenideListener () {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         open("https://github.com");
-        $(".header-search-input").setValue(REPOSITORY);
-        $(".header-search-input").pressEnter();
+        $(".header-search-input").setValue(REPOSITORY).pressEnter();
         $(linkText(REPOSITORY)).click();
         $(partialLinkText("Issues")).should(Condition.visible);
     }

@@ -25,7 +25,7 @@ public class LambdaTest {
     @Link(name = "GitHub", url = "https://github.com")
     @Test
 
-    public void checkIssueLambdaTest () {
+    public void checkIssuesLambdaTest () {
         AllureLifecycle lifecycle = Allure.getLifecycle();
         step("Открыть Github", () -> {
             open("https://github.com");
